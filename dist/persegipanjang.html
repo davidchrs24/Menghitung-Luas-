@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 my-3">
+  <div class="border rounded py-2 px3 bg-red-500 mb-8 w-48 mx-8">
+    <p class="bg-green-500 p-2 rounded-lg text-white py-2 px-4 m-0 w-40 mb-3 mx-4"><a href="persegipanjang.html">Menghitung Luas</a></p>
+    <ul class="mx-4">
+      <li class="bg-blue-500 rounded-lg text-white py-2 px-4 w-40 mb-3"><a href="persegipanjang.html">Persegi Panjang</a></li>
+      <li class="bg-blue-500 rounded-lg text-white py-2 px-4 w-40 mb-3"><a href="segitiga.html">Segitiga</a></li>
+      <li class="bg-blue-500 rounded-lg text-white py-2 px-4 w-40 mb-3"><a href="lingkaran.html">Lingkaran</a></li>
+    </ul>
+  </div>
+  <div id="app">
+    <table class="p-6 max-w-sm mx-auto bg-green-500 rounded-xl shadow-md flex items-center space-x-4">
+        <tr>
+            <td class="text-red-600 font-bold">Panjang</td>
+            <td>:</td>
+            <td><input type="text"v-model="panjang" class="border rounded py-2 px3 shadow focus:ring focus:outline-none mb-3"></td>
+        </tr>
+        <tr>
+          <td class="text-red-600 font-bold">Lebar</td>
+          <td>:</td>
+          <td><input type="text"v-model="lebar" class="border rounded py-2 px3 shadow focus:ring focus:outline-none mb-3"></td>
+      </tr>
+      <tr>
+        <td class="text-red-600 font-bold">Luas</td>
+        <td>:</td>
+        <td>{{luas}}</td>
+      </tr>
+    <tr>
+      <td colspan="3"><button class="bg-red-500 rounded text-white py-2 px-4" v-on:click="hitungluas">Hitung</button></td>
+    </tr>
+    </table>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+        el: '#app',
+        data: {
+          panjang: "",
+          lebar :"",
+          luas:""
+        },
+        methods: {
+          hitungluas(){
+            this.luas = this.panjang * this.lebar
+          }
+        }
+      })
+    </script>
+</body>
+</html>
